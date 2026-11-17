@@ -9,13 +9,24 @@ public class Ventas {
     private final StringProperty idusuario = new SimpleStringProperty();
     private final StringProperty Cliente = new SimpleStringProperty();
     private final StringProperty producto = new SimpleStringProperty();
-    private final StringProperty cantidad = new SimpleStringProperty();
+    private final IntegerProperty cantidad = new SimpleIntegerProperty();
     private final DoubleProperty precio = new SimpleDoubleProperty();
     private final DoubleProperty subtotal = new SimpleDoubleProperty();
     private final DoubleProperty total = new SimpleDoubleProperty();
     private final ObjectProperty<LocalDate> FechaVenta = new SimpleObjectProperty<>();
     private final StringProperty estado = new SimpleStringProperty();
 
+    public final int getCantidad() {
+        return cantidad.get();
+    }
+
+    public final void setCantidad(int value) {
+        cantidad.set(value);
+    }
+
+    public final IntegerProperty cantidadProperty() {
+        return cantidad;
+    }
     public final String getEstado() {
         return estado.get();
     }
@@ -74,18 +85,6 @@ public class Ventas {
 
     public final DoubleProperty precioProperty() {
         return precio;
-    }
-
-    public final String getCantidad() {
-        return cantidad.get();
-    }
-
-    public final void setCantidad(String value) {
-        cantidad.set(value);
-    }
-
-    public final StringProperty cantidadProperty() {
-        return cantidad;
     }
 
     public final String getProducto() {
